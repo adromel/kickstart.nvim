@@ -13,4 +13,11 @@ return {
   },
   vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv"),
   vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv"),
+  vim.api.nvim_create_autocmd('VimEnter', { -- On enter
+    pattern = '*',
+    callback = function()
+      vim.cmd.source(vim.fn.stdpath 'config' .. '/lua/custom/plugins/after/transparency.lua') -- source file
+    end,
+    once = true,
+  }),
 }
