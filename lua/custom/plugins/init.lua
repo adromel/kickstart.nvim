@@ -4,6 +4,16 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+  },
+  {
     'jiaoshijie/undotree',
     dependencies = 'nvim-lua/plenary.nvim',
     config = true,
@@ -11,15 +21,15 @@ return {
       { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>" },
     },
   },
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      'nvim-tree/nvim-web-devicons', -- optional, but recommended
-    },
-    lazy = false, -- neo-tree will lazily load itself
-  },
+  -- {
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'MunifTanjim/nui.nvim',
+  --     'nvim-tree/nvim-web-devicons', -- optional, but recommended
+  --   },
+  --   lazy = false, -- neo-tree will lazily load itself
+  -- },
   vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>'),
   vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv"),
   vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv"),
