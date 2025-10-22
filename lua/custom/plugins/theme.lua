@@ -1,0 +1,1 @@
+/home/lex/.config/omarchy/current/theme/neovim.lua
