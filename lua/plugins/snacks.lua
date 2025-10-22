@@ -8,6 +8,13 @@ return {
     {
       "<leader><space>",
       function()
+        Snacks.picker.buffers({ focus = "list" })
+      end,
+      desc = "Open Buffers",
+    },
+    {
+      "<leader>r",
+      function()
         Snacks.picker.recent({ focus = "list" })
       end,
       desc = "Recent",
